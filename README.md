@@ -13,4 +13,4 @@ O projeto está separado em 3 pastas:
   
 * exercicio_3 - Cadastro de veículos
   
-  Utilização:
+  Utilização: Apenas executar.
