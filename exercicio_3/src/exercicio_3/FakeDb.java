@@ -7,9 +7,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Implementação de uma base falsa para execução do exercício.
+ * @author samuel
+ *
+ */
 public class FakeDb {
 
+	/**
+	 * Identificador único da base.
+	 */
 	private Long id = 0L;
+	
+	/**
+	 * Mapa utilizado para simular uma base de dados.
+	 */
 	private Map<Long, Vehicle> db = new HashMap<Long, Vehicle>();
 
 	/**

@@ -8,13 +8,38 @@ import java.util.Date;
  * @author samuel
  */
 public class Vehicle {
+	
+	/**
+	 * Identificador único do veículo.
+	 */
 	private Long id;
+	/**
+	 * Nome do veículo.
+	 */
 	private String veiculo;
+	/**
+	 * Marca do veículo.
+	 */
 	private String marca;
+	/**
+	 * Ano do veículo.
+	 */
 	private Integer ano;
+	/**
+	 * Descrição do veículo.
+	 */
 	private String descricao;
+	/**
+	 * Informação se o veículo foi vendido ou não.
+	 */
 	private Boolean vendido;
+	/**
+	 * Data de criação.
+	 */
 	private Date created;
+	/**
+	 * Data de atualização.
+	 */
 	private Date updated;
 
 	/**

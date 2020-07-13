@@ -51,7 +51,7 @@ public class APIVehicleFakeDb {
 	 */
 	public Long post(Vehicle vehicle) {
 		Long retCode = -1L;
-		Vehicle temp = connection.insert(vehicle);
+		Vehicle temp = Validate(vehicle) ? connection.insert(vehicle) : null;
 		if (temp != null) {
 			retCode = temp.getId();
 		}
@@ -71,7 +71,7 @@ public class APIVehicleFakeDb {
 			return retCode;
 		}
 
-		Vehicle temp = connection.update(vehicle);
+		Vehicle temp = Validate(vehicle) ? connection.update(vehicle) : null;
 		if (temp != null) {
 			retCode = temp.getId();
 		}
@@ -87,7 +87,7 @@ public class APIVehicleFakeDb {
 	 * @return o identificador do veículo, -1 em caso de falha.
 	 */
 	public Long patch(Long id, Vehicle vehicle) {
-		Long retCode = post(id, vehicle);
+		Long retCode = Validate(vehicle) ? post(id, vehicle) : -1L;
 
 		return retCode;
 	}
@@ -107,7 +107,7 @@ public class APIVehicleFakeDb {
 	 * @return true se objeto válido, false se objeto inválido
 	 */
 	private boolean Validate(Vehicle vehicle) {
-		String pattern = "Volkswagen, Ford, Chevrolet, Honda, Fiat";
+		String pattern = "\\bVolkswagen|Ford|Chevrolet|Honda|Fiat\\b";
 		
 		return vehicle.getMarca().matches(pattern);
 	}
